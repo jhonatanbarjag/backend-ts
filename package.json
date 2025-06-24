@@ -2,9 +2,10 @@
   "name": "backend-ts",
   "version": "1.0.0",
   "description": "",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc ",
     "test": "echo \"Hola mundo\"",
     "lint": "eslint src/**/*.ts",
     "dev": "nodemon --watch src/** --ext ts,json --ignore src/**/*.spec.ts --exec ts-node src/main.ts",
@@ -16,7 +17,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
@@ -31,5 +31,8 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.28.0"
+  },
+  "dependencies": {
+    "mongoose": "^8.13.0"
   }
 }

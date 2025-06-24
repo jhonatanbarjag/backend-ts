@@ -1,10 +1,19 @@
 import express from "express";
-const app = express();
+import { ConnectDatabase } from './database';
+
+import bodyparser from "body-parser";
+import TodoRoutes from "./routes/todo-list.routes";
+
 const port = 3001;
 
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
+const app = express();
+
+app.use(bodyparser.json());
+
+app.use("/todos", TodoRoutes);
+
+ConnectDatabase();
+
 
 app.listen(port, () => {
   console.log(`servidor funcionado en el puerto ${port}`);
