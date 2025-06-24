@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc --watch",
+    "build": "tsc",
     "test": "echo \"Hola mundo\"",
     "lint": "eslint src/**/*.ts",
-    "serve": "node dist/index.js",
+    "dev": "nodemon --watch src/** --ext ts,json --ignore src/**/*.spec.ts --exec ts-node src/main.ts",
+    "serve": "node dist/main.js",
     "start": "npm run build && npm run dev",
     "format": "prettier --write src/**/*.ts",
     "prepare": "husky"
@@ -15,8 +16,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
     "@eslint/js": "^9.23.0",
     "@types/express": "^5.0.1",
     "@types/node": "^22.13.13",
@@ -24,6 +27,8 @@
     "express": "^4.21.2",
     "globals": "^16.0.0",
     "husky": "^9.1.7",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.28.0"
   }
