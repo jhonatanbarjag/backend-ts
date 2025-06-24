@@ -21,8 +21,8 @@ class TodoService{
     async update(_id: string,  updateDTO: Partial<CreateTodoDTO>){
         return TodoRepository.update(_id, updateDTO);
     }
-    async remove(_id: string) {
-        return TodoRepository.delete(_id);
+    async remove(id: string) {
+        return TodoRepository.delete(id);
     }
         
 }

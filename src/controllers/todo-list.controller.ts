@@ -45,9 +45,8 @@ class TodoController{
     async remove(req:Request, res:Response) {
         try {
             const { id } = req.params;
-            const { title, description, done } = req.body;
             
-            const todos = await TodoService
+            const todos = await TodoService.remove(id);
             res.status(200).json({ data:todos });
         } catch (error) {
             res.status(500).json({ error});

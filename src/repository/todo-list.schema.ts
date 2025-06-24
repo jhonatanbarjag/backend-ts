@@ -19,7 +19,7 @@ class TodoRepository{
     }
 
     async findById(_id:string){
-        const result = await TodoModel.findOne({_id})
+        const result = await TodoModel.findOne({_id, archived: false});
         return result;
     }
 
