@@ -14,7 +14,8 @@ class TodoRepository{
     }
 
     async findAll(){
-        const result= await TodoModel.find({archived: false});
+        const result= await TodoModel.find({archived: false}).populate('user'); // Solo tareas no archivadas
+        // .populate('user', 'name email') es para obtener los datos del usuario que crea la tarea
         return result;
     }
 
@@ -43,6 +44,11 @@ class TodoRepository{
 
 const todoRepository = new TodoRepository();
 export default todoRepository;  
+
+// este es el repositorio que se encarga de interactuar con la base de datos
+// se encarga de realizar las operaciones CRUD sobre los documentos de la coleccion de todo-list 
+// se encarga de llamar a los metodos del modelo de mongoose para realizar las operaciones CRUD
+// se encarga de manejar los errores que puedan ocurrir en el proceso
 
 //sof deeletea a un hardelete
 // si se quiere eliminar fisicamente el documento, se puede usar el metodo deleteOne

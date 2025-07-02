@@ -5,6 +5,7 @@ interface CreateTodoDTO {
     title: string;
     description: string;
     done: boolean;
+    user: string; // id del usuario que crea la tarea
 }
 
 class TodoService{
@@ -28,5 +29,7 @@ class TodoService{
 }
 const todoService = new TodoService();
 export default todoService;
-// esto es un ejemplo de un servicio que interactua con un repositorio para manejar la logica de negocio
-// y la comunicacion con la base de datos.
+
+// este es el servicio que se encarga de la logica de negocio de la aplicacion
+// se encarga de llamar al repositorio para realizar las operaciones CRUD
+// y de manejar los errores que puedan ocurrir en el proceso.

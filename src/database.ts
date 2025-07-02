@@ -13,3 +13,7 @@ export async function ConnectDatabase(){
     }
 
 }
+// Esto es un ejemplo de una funcion que se encarga de conectar a la base de datos utilizando mongoose.
+// La funcion utiliza el metodo connect de mongoose para conectarse a la base de datos MongoDB
+// y maneja los errores de conexion.
+// La funcion se puede llamar al inicio de la aplicacion para asegurarse de que la base de datos este disponible antes de iniciar el servidor.
